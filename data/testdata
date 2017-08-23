@@ -1,0 +1,716 @@
+[logintest]
+loginid = m1@100
+pwd = dyw1111
+method = bgLogin.do
+
+[changepwd]
+loginid = 2988
+oldpwd = dyw1111,
+newpwd = dyw1113
+method = modifyPwd.do
+
+
+[getSchoolList]
+userId = 1
+schoolCode =
+schoolName =
+pageNum = 1
+pageSize = 20
+method = getSchoolList.do
+
+
+[changeSchoolStatus]
+userId = 1
+schoolId = 1
+type = 1
+method = changeSchoolStatus.do
+
+
+[getProvinceCityList]
+userId = 1
+method = getProvinceCityList.do
+
+
+[getNewAccount]
+userId = 1
+schoolId = 1
+type = 1
+method = getNewAccount.do
+
+
+[addSchool]
+userId = 1
+schoolName = 蝈蝈测
+relatePersonName = 蝈蝈
+phoneNum = 13111111111
+schoolPhoneNum = 13111111111
+schoolCode = 8189gg
+address = 北京市西城区
+schoolType = 1
+provinceId = 1733093
+cityId = 2
+adminLoginId = m1@8189gg
+isCheck = 0
+method = addSchoolInfo.do
+
+
+[getSchoolInfo]
+userId = 1
+schoolId = 476
+method = getSchoolInfo.do
+
+
+[modifySchoolInfo]
+userId = 1
+schoolId = 453
+schoolName = 测试分校1
+relatePersonName = 管理员1
+phoneNum = 13111111111
+schoolPhoneNum = 13111111111
+address = 北京市西城区
+schoolType = 1
+provinceId = 1733093
+cityId = 2
+method = modifySchoolInfo.do
+
+
+[getTeacherList]
+userId = 1
+searchLoginId = m1@011FX
+searchUserName = 管理员1
+pageNum = 1
+pageSize = 20
+method = getTeacherList.do
+
+[getSchoolAndSubList]
+userId = 1
+type = 1
+method = getSchoolAndSubList.do
+
+[addTeacher]
+userId = 1
+teacherName = 教师1
+phoneNum = 13111111111
+idNum = 111111199011111111
+teacherCERTNum = 11111111111111111
+sex = 1
+teacherLoginId = t4@814gg
+teacherStatus = 0
+schoolId = 476
+subSchoolId =
+teacherType = 1
+address = 北京市西城区
+workCertNum = 201701011
+workCertSignDate = 2017-01-01
+method = addTeacher.do
+
+[getTeacherInfo]
+userId = 1
+teacherId = 2990
+method = getTeacherInfo.do
+
+[modifyTeacherInfo]
+userId = 1
+teacherUserId = 2990
+realName = 教师1
+phoneNum = 13111111111
+idNum = 111111199011111111
+teacherCERTNum = 11111111111111111
+sex = 1
+teacherStatus = 0
+schoolId = 476
+subSchoolId =
+teacherType = 1
+address = 北京市西城区
+isLecture = 0
+isBaseSkill = 0
+isBK = 0
+workCertNum = 201701011
+workCertSignDate = 2017-01-01
+method = modifyTeacherInfo.do
+
+[getCourseList]
+userId = 1
+courseId = 1
+courseName = 1
+pageNum = 1
+pageSize = 20
+method = getCourseList.do
+
+[getApplyPhaseIdNameList]
+userId = 1
+method = getApplyPhaseIdNameList.do
+
+[addCourseInfo]
+userId = 1
+courseName = 1
+subject = 1
+phaseId = 1
+courseGoal = 1
+resIds = 1
+method = addCourseInfo.do
+
+[addResFile]
+userId = 1
+courseId = 1
+sourceType = 1
+resTitle = 1
+file = 1
+method = addResFile.do
+
+[delRes]
+userId = 1
+courseId = 1
+sourceType = 1
+resId = 1
+method = delRes.do
+
+[getCourseInfo]
+userId = 1
+courseId = 774
+method = getCourseInfo.do
+
+[modifyCourseInfo]
+userId = 1
+courseId = 774
+courseName = 1
+subject = 1
+phaseId = 1
+courseGoal = 1
+method = modifyCourseInfo.do
+
+[getCourselistList]
+userId = 1
+pageNum = 1
+pageSize = 20
+method = getCourselistList.do
+
+[getCourseListBySubjectPhase]
+userId = 1
+subject = 1
+phaseId = 1
+method = getCourseListBySubjectPhase.do
+
+[addCourselistInfo]
+userId = 1
+courselistName = 1
+subject = 1
+phaseId = 128
+courseIds = 774
+schoolIds = 476
+method = addCourselistInfo.do
+
+
+[getCourselistInfo]
+userId = 1
+courselistId = 443
+method = getCourselistInfo.do
+
+
+[modifyCourselistInfo]
+userId = 1
+courselistId = 443
+courselistName = 1
+subject = 1
+phaseId = 128
+courseIds = 774
+schoolIds = 476
+method = modifyCourselistInfo.do
+
+
+[getPlessonList]
+userId = 1
+pageNum = 1
+pageSize = 20
+method = getPlessonList.do
+
+[getAllCourseIdNamwList]
+userId = 1
+useFor = 0
+subject = 1
+phaseId = 1
+courseName = 1
+method = getAllCourseIdNamwList.do
+
+
+[addPlessonInfo]
+userId = 1
+courseId = 778
+plessonDuration = 1
+plessonCredits = 1
+plessonDesc = 1
+resIds =
+liveList = "[{/liveId/:1|/liveName/:/直播名称/|/liveStartTime/:/2017-01-01 11:11/|/liveEndTime/:/2017-06-01 11:11/}]"
+method = addPlessonInfo.do
+
+[getPlessonInfo]
+userId = 1
+plessonId = 417
+method = getPlessonInfo.do
+
+[modifyPlessonInfo]
+userId = 1
+plessonId = 418
+courseId = 778
+plessonDuration = 1
+plessonCredits = 1
+plessonDesc = 1
+liveList = "[{/liveId/:1|/liveName/:/直播名称/|/liveStartTime/:/2017-01-01 11:11/|/liveEndTime/:/2017-06-01 11:11/}]"
+method = modifyPlessonInfo.do
+
+[getClassList]
+userId = 1
+classId = 1
+className = hh
+pageNum = 1
+pageSize = 20
+method = getClassList.do
+
+[changeClassStatus]
+userId = 1
+classId = 820
+type = 1
+method = changeClassStatus.do
+
+[getCourselistIdNameCourseList]
+userId = 1
+phaseId = 1
+schoolId = 1
+method = getCourselistIdNameCourseList.do
+
+[getTeacherIdNameList]
+userId = 1
+schoolId = 1
+subSchoolId = 1
+method = getTeacherIdNameList.do
+
+[getClassroomIdNameList]
+userId = 1
+schoolId = 1
+subSchoolId = 1
+method = getClassroomIdNameList.do
+
+[addClassInfo]
+userId = 1
+className = 1
+phaseId = 121
+schoolId = 471
+subSchoolId =
+courselistId = 365
+courseList = "[{/courseId/:625|/courseStartTime/:/2016-01-01 12:12/|/courseEndTime/:/2016-01-01 12:12/|/teacherId/:19|/classroomId/:1|/orderNum/:1}]"
+method = addClassInfo.do
+
+[getClassInfo]
+userId = 1
+classId = 832
+method = getClassInfo.do
+
+[modifyClassInfo]
+userId = 1
+phaseId = 121
+classId = 1
+className = hh
+courselistId = 1
+courseList = "[{/courseId/:1|/courseStartTime/:/2016-01-01 12:12/|/courseEndTime/:/2016-01-01 12:12/|/teacherId/:19|/classroomId/:1|/orderNum/:1}]"
+method = modifyClassInfo.do
+
+[getClassmatelist]
+userId = 1
+classId = 832
+method = getClassmatelist.do
+
+[getClassModifyDetail]
+userId = 1
+classId = 832
+pageNum = 1
+pageSize = 20
+method = getClassModifyDetail.do
+
+[getClassCourselistList]
+userId = 1
+schoolId = 1
+stuBirth = 1
+method = getClassCourselistList.do
+
+[getClassCourseList]
+userId = 1
+classIds = 832
+method = getClassCourseList.do
+
+[addEnrollInfo]
+userId = 1
+studentLoginId = s4@721gg
+studentName = stu1
+studentBirth = 2016-01-01
+studentSex = 1
+gradeId = 1
+parentName = 我是家长
+phoneNum = 13111111111
+curSchoolName = 学校
+payAmount = 1
+schoolId = 467
+classIds = 834:201600202
+ignorePhoneNum = 0
+isTest = 0
+audition = 0
+prepay = 0
+testScore = 0
+testDesc = 0
+auditionDesc = 0
+communication = 0
+timeId = 0
+type = 0
+method = addEnrollInfo.do
+
+[getStudentList]
+userId = 1
+loginId = 1
+pageNum = 1
+pageSize = 1
+name =
+className =
+shcoolId =
+gradeId =
+campusId =
+state =
+method = getStudentList.do
+
+[getStudentInfo]
+userId = 1
+studentId = 2978
+type = 0
+method = getStudentInfo.do
+
+[getStudentChangeDetail]
+userId = 1
+studentId = 2978
+pageNum = 1
+pageSize = 1
+method = getStudentChangeDetail.do
+
+
+[modifyStudentInfo]
+userId = 1
+studentId = 2953
+studentName = 我是学生
+birthday = 2016-01-01
+sex = 1
+gradeId = 1
+parentName = 我是家长
+phoneNum = 13111111111
+curSchoolName = 学校
+classIds = 834:201600203
+studentStatus = 0
+ignorePhoneNum = 0
+method = modifyStudentInfo.do
+
+[resetPwd]
+userId = 1
+targetUserId = 1
+method = resetPwd.do
+
+[getNoticeList]
+userId = 1
+pageNum = 1
+pageSize = 20
+method = getNoticeList.do
+
+[getNoticeInfo]
+userId = 1
+noticeId = 1
+method = getNoticeInfo.do
+
+[addNoticeInfo]
+userId = 1
+message = 1
+noticeTitle = 1
+noticeImg = 1
+noticeContent = 1
+method = addNoticeInfo.do
+
+[getAdminAndTeacherList]
+userId = 1
+loginId = 1
+pageNum = 1
+pageSize = 1
+method = getAdminAndTeacherList.do
+
+[getRoleList]
+userId = 1
+schoolId = 1
+method = getRoleList.do
+
+[addAdminInfo]
+userId = 1
+schoolId = 476
+loginId = m2@814gg
+userName = 阿萨德
+phoneNum = 13111111111
+roleId = 2
+method = addAdminInfo.do
+
+[getPhaseList]
+userId = 1
+pageNum = 1
+pageSize = 1
+method = getPhaseList.do
+
+[addPhaseInfo]
+userId = 1
+phaseName = 1
+phaseDesc = 1
+method = addPhaseInfo.do
+
+[getPhaseInfo]
+userId = 1
+phaseId = 1
+method = getPhaseInfo.do
+
+[modifyPhaseInfo]
+userId = 1
+phaseId = 1
+phaseName = 1
+phaseDesc = 1
+method = modifyPhaseInfo.do
+
+[getClassStudentCountList]
+userId = 1
+classId = 1
+pageNum = 1
+pageSize = 1
+method = getClassStudentCountList.do
+
+[modifyClassMaxCapacity]
+userId = 1
+classId = 832
+classMaxCapacity = 12
+method = modifyClassMaxCapacity.do
+
+[getStudentScoreList]
+userId = 1
+loginId = 1
+pageNum = 1
+pageSize = 1
+method = getStudentScoreList.do
+
+[modifyStudentScore]
+userId = 1
+studentId = 2974
+score = 1
+reson = 1
+method = modifyStudentScore.do
+
+[getClassroomList]
+userId = 1
+pageNum = 1
+pageSize = 1
+method = getClassroomList.do
+
+[addClassroom]
+userId = 1
+schoolId = 476
+subSchoolId =
+classroomName = 1
+classroomAddr = 1
+method = addClassroom.do
+
+[getClassroomInfo]
+userId = 1
+classroomId = 268
+method = getClassroomInfo.do
+
+[modifyClassroom]
+userId = 1
+classroomId = 268
+schoolId = 476
+subSchoolId =
+classroomName = 1
+classroomAddr = 1
+method = modifyClassroom.do
+
+[getSubSchoolList]
+userId = 1
+pageNum = 1
+pageSize = 1
+method = getSubSchoolList.do
+
+[addSubSchoolInfo]
+userId = 2945
+subSchoolName = 测试校区1
+relatePersonName = 校区管理员1
+phoneNum = 13111111111
+subSchoolPhoneNum = 13111111111
+address = 北京市西城区
+provinceId = 1733093
+cityId = 2
+adminLoginId = m3@721gg
+method = addSubSchoolInfo.do
+
+[getSubSchoolInfo]
+userId = 1
+subSchoolId = 469
+method = getSubSchoolInfo.do
+
+[modifySubSchoolInfo]
+userId = 1
+subSchoolId = 469
+subSchoolName = 测试校区1
+relatePersonName = 校区管理员1
+phoneNum = 13111111111
+subSchoolPhoneNum = 13111111111
+address = 北京市西城区
+provinceId = 1733093
+cityId = 2
+method = modifySubSchoolInfo.do
+
+[checkVersion]
+versionCode = 1.1
+appId = 1
+method = checkVersion.do
+
+[addRenewEnrollInfo]
+userId =
+studentId =
+studentLoginId =
+studentName =
+studentBirth =
+studentSex =
+curSchoolName =
+gradeId =
+parentName =
+phoneNum =
+payAmount =
+schoolId =
+classIds =
+method = addRenewEnrollInfo.do
+
+[getAllUserByType]
+userId = 1
+method = getAllUserByType.do
+
+[modifyAdminStatus]
+userId = 1
+targetUserId = 1
+status = 0
+method = modifyAdminStatus.do
+
+[checkHasClass]
+userId = 1
+method = checkHasClass.do
+
+[saveTokens]
+userId = 1
+deviceToken = 1
+deviceType = 2
+appId = 1
+method = saveTokens.do
+
+[getUnreadCount]
+userId = 1
+method = getUnreadCount.do
+
+[getPaperInfo]
+userId = 1
+paperId = 1
+method = getPaperInfo.do
+
+[approvePaper]
+userId = 1
+paperId = 1
+pass = 0
+method = approvePaper.do
+
+[getExpList]
+userId = 1
+trainId =
+markType =
+pageNum = 1
+pageSize = 20
+method = getExpList.do
+
+[setCurrPhase]
+userId = 1
+phaseId = 1
+type = 1
+method = setCurrPhase.do
+
+[getUpClassInfo]
+userId = 1
+classId = 832
+method = getUpClassInfo.do
+
+[upClass]
+userId = 1
+studentIds = 2949
+classId = 834
+method = UpClass.do
+
+[getPeriod]
+userId = 1
+method = getPeriod.do
+
+[GetInfoByPhone]
+userId = 1
+phoneNum = 13111111111
+schoolId = 1
+method = getInfoByPhone.do
+
+[getInfoByName]
+userId = 1
+studentName = 1
+schoolId = 1
+method = getInfoByName.do
+
+[getInformalStudentList]
+userId = 1
+name = 1
+pageNum = 1
+pageSize = 1
+phone = 1
+schoolName = 1
+schoolId = 1
+subSchoolId =
+gradeId = 1
+periodType = 1
+test = 1
+audition = 1
+enrollTime = 1
+method = getInformalStudentList.do
+
+[getPeriodType]
+userId = 1
+method = getPeriodType.do
+
+[modifyInformalStudentInfo]
+userId = 1
+studentId = 1
+studentName = stu1
+studentBirth = 2016-01-01
+studentSex = 1
+gradeId = 1
+parentName = 我是家长
+phoneNum = 13111111111
+curSchoolName = 学校
+payAmount = 1
+prepay = 1
+schoolId = 13
+classIds = 50:2016002001
+isTest = 0
+audition = 0
+testScore = 0
+testDesc = 0
+auditionDesc = 0
+communication = 0
+timeId = 0
+type = 0
+method = modifyInformalStudentInfo.do
+
+[getInformalStudentInfo]
+userId = 1
+studentId = 3059
+method = getInformalStudentInfo.do
+
+[deleteStudent]
+userId = 1
+studentId = 1
+method = deleteStudent.do
