@@ -1,7 +1,7 @@
 [logintest]
-loginid = m1@100
-pwd = dyw1111
-method = bgLogin.do
+name = 爱学派FF
+pwd = 1111
+method = login.do
 
 [changepwd]
 loginid = 2988

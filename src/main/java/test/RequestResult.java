@@ -3,14 +3,14 @@ package test;
 import org.testng.Assert;
 
 
-public class requestResult {
+public class RequestResult {
 	/**
 	 * 获得请求结果
 	 */
 	public static void getResult(String str) {
-		if(jsonResults.getJsonResult(str).equals("1")){
+		if(JsonResults.getJsonResult(str).equals("1")){
 //			pass(str);
-			Assert.assertTrue(jsonResults.getJsonResult(str).contains("1"));
+			Assert.assertTrue(JsonResults.getJsonResult(str).contains("1"));
 //		}
 //		else if(!jsonResults.getJsonResult(str).equals("1")){
 //			System.out.print("Result值："+fail(str));
@@ -21,10 +21,10 @@ public class requestResult {
 	}
 
 	public static void pass(String str){
-		Assert.assertTrue(jsonResults.getJsonResult(str).contains("1"),jsonResults.getJsonResult(str) );
+		Assert.assertTrue(JsonResults.getJsonResult(str).contains("1"),JsonResults.getJsonResult(str) );
 	}
 	public static String fail(String str){
-		String result=jsonResults.getJsonResult(str);
+		String result=JsonResults.getJsonResult(str);
 		System.out.println(result);
 		return result;
 	}

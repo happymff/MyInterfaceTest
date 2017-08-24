@@ -14,11 +14,10 @@ public class sign {
 	/**
 	 * 返回时间戳
 	 */
-	public static String  getLoginSign(Map<String, Object> map,String loginid,String Pwd,String Method) throws Exception{
+	public static String  getLoginSign(Map<String, Object> map,String name,String Pwd,String Method) throws Exception{
 
-		String signurl = "http://www.yuwenclub.com/dyw-managet/test/_manager/GenderCourseRecordSign.jsp";
-//		String signurl = "http://192.168.10.150/test/_manager/GenderCourseRecordSign.jsp";
-		map.put("loginId",loginid);
+		String signurl ="http://school.etiantian.com/aixuepadtios/test/_manager/GenderCourseRecordSign.jsp";
+		map.put("name",name);
 		map.put("pwd",Pwd);
 		map.put("time",times.getCurrentTime());
 		map.put("method",Method);

@@ -30,7 +30,7 @@ public class HttpRequestUtil {
     /** 
      * 请求编码 
      */  
-    private static String requestEncoding = "GBK";  
+    private static String requestEncoding = "GBK";
   
     /** 
      * <pre> 
@@ -140,8 +140,10 @@ public class HttpRequestUtil {
      * @return HTTP响应的字符串 
      */  
     @SuppressWarnings("unchecked")  
-    public static String doPost(String reqUrl, Map parameters,  
-            String recvEncoding) {  
+    public static String doPost(String reqUrl, Map parameters,
+            String recvEncoding) {
+        setRequestEncoding(recvEncoding);
+
         HttpURLConnection url_con = null;  
         String responseContent = null;  
         try {  
@@ -152,7 +154,7 @@ public class HttpRequestUtil {
                 params.append(element.getKey().toString());  
                 params.append("=");  
                 params.append(URLEncoder.encode(element.getValue().toString(),  
-                        HttpRequestUtil.requestEncoding));  
+                        HttpRequestUtil.getRequestEncoding()));
                 params.append("&");  
             }  
   

@@ -27,10 +27,10 @@ public class modifySchoolInfo {
 		postData.put("sign",s);
 		String json=HttpRequestUtil.doPost(url, postData,"UTF-8");
 		System.out.println("返回结果："+json);
-		if(jsonResults.getJsonResult(json).equals("1")){
-			Assert.assertTrue(jsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
-		}else if(jsonResults.getJsonResult(json).equals("-1")){
-			Assert.assertTrue(jsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
+		if(JsonResults.getJsonResult(json).equals("1")){
+			Assert.assertTrue(JsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
+		}else if(JsonResults.getJsonResult(json).equals("-1")){
+			Assert.assertTrue(JsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
 		}else{
 			System.out.println("无任何结果");
 		}

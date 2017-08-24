@@ -3,7 +3,6 @@ package test;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import util.HttpRequestProxy;
@@ -24,7 +23,7 @@ public class createSchool {
 		postData.remove("method");
 		String json=HttpRequestUtil.doPost(url, postData,"UTF-8");
 		System.out.println("返回结果："+json);
-		requestResult.getResult(json);
+		test.RequestResult.getResult(json);
 
 	}
 

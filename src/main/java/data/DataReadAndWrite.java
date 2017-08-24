@@ -163,7 +163,7 @@ public class DataReadAndWrite {
          * Workbook: excel的文档对象 sheet: excel的表单 row: excel中的行 cell: excel中的单元格子
          *
          */
-        Workbook workbook = getWeebWork("/Users/mengfeifei/Desktop/TestData.xlsx");
+        Workbook workbook = getWeebWork("/Users/mff/Desktop/TestData1.xlsx");
         System.out.println("总表页数为：" + workbook.getNumberOfSheets());// 获取表页数
         // Sheet sheet =workbook.getSheetAt(0);
         Sheet sheet = workbook.getSheetAt(0);// 获取第二个表单
@@ -240,13 +240,13 @@ public class DataReadAndWrite {
 
 
     public static void main(String[] args) throws IOException {
-//       readFromExcelDemo1();
+       readFromExcelDemo1();
 
 //      String filePath = "E:/test.xlsx";
 //      readFromExcelDemo(filePath);//从一个指定的excel文件中读取内容
 
 
-      writeToExcelDemo();
+      //writeToExcelDemo();
     }
 
 
@@ -296,6 +296,6 @@ public class DataReadAndWrite {
         // dataList.add(treeMap1);
         map.put(DataReadAndWrite.HEADERINFO, headList);
         map.put(DataReadAndWrite.DATAINFON, dataList);
-        writeExcel("/Users/mengfeifei/Desktop/TestData1.xlsx", map, wb,"outPut");//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
+        writeExcel("/Users/mff/Desktop/TestData1.xlsx", map, wb,"outPut");//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
     }
 }
