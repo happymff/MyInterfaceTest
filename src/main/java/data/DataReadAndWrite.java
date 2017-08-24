@@ -12,7 +12,6 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.util.*;
 
 public class DataReadAndWrite {
@@ -54,7 +53,7 @@ public class DataReadAndWrite {
      * @Description: TODO(导出Excel表)
      */
     public static void writeExcel(String pathname, Map<String, Object> map,
-                                  Workbook wb,String sheetName) throws IOException {
+                                  Workbook wb, String sheetName) throws IOException {
         if (null != map && null != pathname) {
             List<Object> headList = (List<Object>) map
                     .get(DataReadAndWrite.HEADERINFO);
@@ -156,20 +155,25 @@ public class DataReadAndWrite {
 
     }
 
-    public static void readFromExcelDemo1() throws IOException {
+    public static void readFromExcelDemo1(String sheetName) throws IOException {
         /**
          * 读取Excel表中的所有数据
          *
          * Workbook: excel的文档对象 sheet: excel的表单 row: excel中的行 cell: excel中的单元格子
          *
          */
-        Workbook workbook = getWeebWork("/Users/mff/Desktop/TestData1.xlsx");
+        //Workbook workbook = getWeebWork("/Users/mff/Desktop/TestData1.xlsx");
+        Workbook workbook = getWeebWork("/Users/mengfeifei/Desktop/TestData1.xlsx");
         System.out.println("总表页数为：" + workbook.getNumberOfSheets());// 获取表页数
         // Sheet sheet =workbook.getSheetAt(0);
-        Sheet sheet = workbook.getSheetAt(0);// 获取第二个表单
+        //Sheet sheet = workbook.getSheetAt(0);// 获取第一个表单
+        Sheet sheet = workbook.getSheet(sheetName);// 获取第outPut表单
+        System.out.println("sheetName:" + sheet.getSheetName());
         int rownum = sheet.getLastRowNum();// 获取总行数
+//      System.out.println("rownum:"+rownum);
         for (int i = 0; i <= rownum; i++) {
             Row row = sheet.getRow(i);// 获取表达的第i行
+            //System.out.println("row:"+row);
             // Cell orderno =
             // row.getCell(2);//获取指定单元格中的数据(获取一行中的第2列(这里的2指的是0,1,2.排在第三位))
             // System.out.println(orderno.getCellType());//这个打印的是cell的type
@@ -180,6 +184,8 @@ public class DataReadAndWrite {
              * row.getFirstCellNum(): 获取行的第一个单元格的位置 row.getLastCellNum():
              * 获取行的最后一个单元格的位置
              */
+//            System.out.println("getFirstCellNum:" + row.getFirstCellNum());
+//            System.out.println("getLastCellNum:" + row.getLastCellNum());
             for (int j = row.getFirstCellNum(); j < row.getLastCellNum(); j++) {// 遍历一行中的所有列
                 Cell celldata = row.getCell(j);// 获取一行中的第j列返回Cell类型的数据
                 System.out.print(celldata + "\t");//
@@ -195,15 +201,35 @@ public class DataReadAndWrite {
         /**
          * 读取指定位置的单元格
          */
-         Row row1 = sheet.getRow(1);
-         Cell cell1 = row1.getCell(2);
-         System.out.print("(1,2)位置单元格的值为："+cell1);
-         BigDecimal big = new
-         BigDecimal(cell1.getNumericCellValue());//将科学计数法表示的数据转化为String类型
-         System.out.print("\t"+String.valueOf(big));
+//        Row row1 = sheet.getRow(1);
+//        Cell cell1 = row1.getCell(2);
+//        System.out.print("(1,2)位置单元格的值为：" + cell1);
+//        BigDecimal big = new
+//                BigDecimal(cell1.getNumericCellValue());//将科学计数法表示的数据转化为String类型
+//        System.out.print("\t" + String.valueOf(big));
 
     }
 
+    public static String readFromExcelByParam(String param, int i, int j) throws IOException {
+        /**
+         * 读取Excel表中指定行列的数据
+         *
+         * Workbook: excel的文档对象 sheet: excel的表单 row: excel中的行 cell: excel中的单元格子
+         *
+         */
+        //Workbook workbook = getWeebWork("/Users/mff/Desktop/TestData1.xlsx");
+        Workbook workbook = getWeebWork("/Users/mengfeifei/Desktop/TestData1.xlsx");
+        System.out.println("总表页数为：" + workbook.getNumberOfSheets());// 获取表页数
+        Sheet sheet = workbook.getSheet(param);// 获取第param表单
+        System.out.println("sheetName:" + sheet.getSheetName());
+        /**
+         * 读取指定位置的单元格
+         */
+        Row row1 = sheet.getRow(i);
+        Cell cell1 = row1.getCell(j);
+        System.out.print("(" + i + "," + j + ")位置单元格的值为：" + cell1);
+        return cell1.toString();
+    }
 
     public static void readFromExcelDemo(String fileAbsolutePath) throws IOException {
         /**
@@ -212,6 +238,7 @@ public class DataReadAndWrite {
         Workbook workbook = getWeebWork(fileAbsolutePath);
         System.out.println("总表页数为：" + workbook.getNumberOfSheets());// 获取表页数
         Sheet sheet = workbook.getSheetAt(0);
+        System.out.println("sheetName" + sheet.getSheetName());
         // Sheet sheet = workbook.getSheetAt(1);
         int rownum = sheet.getLastRowNum();// 获取总行数
         for (int i = 0; i <= rownum; i++) {
@@ -240,13 +267,14 @@ public class DataReadAndWrite {
 
 
     public static void main(String[] args) throws IOException {
-       readFromExcelDemo1();
 
+        //String username = readFromExcelByParam("output", 1, 2);
 //      String filePath = "E:/test.xlsx";
 //      readFromExcelDemo(filePath);//从一个指定的excel文件中读取内容
 
-
-      //writeToExcelDemo();
+        writeToExcelByParam("10021", "1", "3", "loginResult");
+        readFromExcelDemo1("loginResult");
+        //writeToExcelDemo();
     }
 
 
@@ -268,7 +296,7 @@ public class DataReadAndWrite {
         headList.add("结账时间");
         headList.add("订单编号");
         headList.add("订单金额");
-        headList.add("用户名");// excel的都
+        headList.add("用户名");
 
         /**
          * TreeMap基于红黑树实现
@@ -284,18 +312,49 @@ public class DataReadAndWrite {
             dataList.add(treeMap);
         }
 
-        /*
-         * 先不要加上以下这一段,否则以下错误: Cannot get a numeric value from a text
-         * cell(不能从一个text cell中获取数字类型的数据)
-         *
-         * 解决办法: http://blog.csdn.net/ysughw/article/details/9288307
-         */
-        // TreeMap<String,Object> treeMap1 = new TreeMap<String, Object>();
-        // treeMap1.put("asd", null);
-        // treeMap1.put("猪头", "zhutou");
-        // dataList.add(treeMap1);
         map.put(DataReadAndWrite.HEADERINFO, headList);
         map.put(DataReadAndWrite.DATAINFON, dataList);
-        writeExcel("/Users/mff/Desktop/TestData1.xlsx", map, wb,"outPut");//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
+        writeExcel("/Users/mengfeifei/Desktop/TestData1.xlsx", map, wb, "outPut");//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
+    }
+
+    public static void writeToExcelByParam(String schoolId, String gradeId, String subjectId, String sheetName) throws IOException {
+        /**
+         * HSSF: .xls XSSF: .xlsx 所以大家会在官网中看到Excel = HSSF+XSSF
+         *
+         * HSSF是POI工程对Excel 97(-2007)文件操作的纯Java实现 XSSF是POI工程对Excel 2007 OOXML
+         * (.xlsx)文件操作的纯Java实现
+         *
+         * 从POI 3.8版本开始，提供了一种基于XSSF的低内存占用的API----SXSSF
+         *
+         */
+
+        //Workbook wb = new XSSFWorkbook();// 创建一个新的excel的文档对象
+        Workbook wb = getWeebWork("/Users/mengfeifei/Desktop/TestData1.xlsx");
+        Sheet sheet = wb.getSheet(sheetName);
+        if (sheet.getRowSumsBelow()) {
+            wb.removeSheetAt(wb.getSheetIndex(sheetName));
+        }
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        List headList = new ArrayList();// 表头数据
+        headList.add("schoolId");
+        headList.add("gradeId");
+        headList.add("subjectId");
+
+        /**
+         * TreeMap基于红黑树实现
+         */
+        List dataList = new ArrayList();// 表格内的数据
+        TreeMap<String, String> treeMap = new TreeMap<String, String>();// 此处的数据必须为有序数据，所以使用TreeMap进行封装
+        treeMap.put("schoolId", schoolId);
+        treeMap.put("gradeId", gradeId);
+        treeMap.put("subjectId", subjectId);
+        dataList.add(treeMap);
+
+        map.put(DataReadAndWrite.HEADERINFO, headList);
+        map.put(DataReadAndWrite.DATAINFON, dataList);
+        // writeExcel("/Users/mff/Desktop/TestData1.xlsx", map, wb, sheetName);//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
+
+        writeExcel("/Users/mengfeifei/Desktop/TestData1.xlsx", map, wb, sheetName);//往wb里面写map中内容，生成E:/test1.xlsx这个文件....
     }
 }
