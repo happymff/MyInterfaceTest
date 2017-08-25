@@ -2,11 +2,11 @@ package test;
 
 import org.testng.annotations.Test;
 import util.HttpRequestUtil;
-import util.TitleUtil;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
+import static data.DataRead_Write.writeToExcelByParam;
+import static data.DataRead_Write.readFromExcelDemo1;
 
 
 public class Mytest {
@@ -33,6 +33,7 @@ public class Mytest {
 //        System.out.println("userName======="+userName);
 //        String jid = JsonResults.getJsonParam(json,"jid");
 //        System.out.println("jid======="+jid);
+        readFromExcelDemo1("outPut");
         String regexSchoolId = "schoolId\":(.*),\"jid";
         String regexGradeId= "gradeId\":([0-9]+),\"classList";
         String regexSubjectId = "subjectId\":([0-9]+),\"classTag";
@@ -42,6 +43,10 @@ public class Mytest {
         System.out.println("gradeId========"+gradeId);
         String subjectId = JsonResults.getParamByRex(json,regexSubjectId);
         System.out.println("subjectId========"+subjectId);
+
+        writeToExcelByParam(schoolID,gradeId,subjectId,"loginResults");
+
+        readFromExcelDemo1("loginResults");
 
         postData.clear();
     }
