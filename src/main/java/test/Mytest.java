@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import util.HttpRequestUtil;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import static data.DataRead_Write.writeToExcelByParam;
 import static data.DataRead_Write.readFromExcelDemo1;
@@ -18,6 +20,8 @@ public class Mytest {
 
     @Test
     public void Logintest() throws Exception {
+
+
         String url =  "http://school.etiantian.com/aixuepadtios/login.do";
         System.out.println(url);
         String s = sign.getLoginSign(postData, name, pwd, method);
