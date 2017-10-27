@@ -1,0 +1,30 @@
+#!/bin/sh
+#============ get the file name ===========
+echo -e "请输入你要读取的文件夹路径\n当前路径为${PWD}"
+read InputDir
+echo "你输入的文件夹路径为${InputDir}"
+echo -e "请输入你要将数据输出保存的文件路径n当前路径为${PWD}"
+read OutputFile
+echo "输出保存的文件路径为${OutputFile}"
+: > $OutputFile   #清空OutputFile
+#循环读取文件夹名
+for file_a in ${InputDir}/*; do
+    temp_file=`basename $file_a`
+    echo $temp_file >> $OutputFile
+done
+#文件的排序
+#cd '/Users/mff/Documents/books'
+#按照时间升序
+#ls -lrt
+#按照时间降序
+#ls -lt
+#按照文件的大小升序
+#ls  -l|sort -n -k 5
+#按照文件的大小降序
+#ls  -l|sort -nr -k 5
+#按照文件名进行升序
+#ls
+#按照文件名进行降序
+#ls -r
+#按照文件名进行升序(去除大小写的影响)
+#ls -f
