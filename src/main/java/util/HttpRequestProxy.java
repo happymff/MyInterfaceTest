@@ -115,8 +115,9 @@ public class HttpRequestProxy {
                     tempLine = rd.readLine();
                 }
                 responseContent = tempStr.toString();
-            } else
+            } else {
                 responseContent = request.getResponseBodyAsString();
+            }
 
             Header locationHeader = request.getResponseHeader("location");
             // 返回代码为302,301时，表示页面己经重定向，则重新请求location的url，这在
@@ -132,19 +133,21 @@ public class HttpRequestProxy {
             throw new Exception(e.getMessage());
 
         } finally {
-            if (rd != null)
+            if (rd != null) {
                 try {
                     rd.close();
                 } catch (IOException e) {
                     throw new Exception(e.getMessage());
                 }
-            if (responseStream != null)
+            }
+            if (responseStream != null) {
                 try {
                     responseStream.close();
                 } catch (IOException e) {
                     throw new Exception(e.getMessage());
 
                 }
+            }
         }
         return responseContent;
     }
@@ -199,18 +202,20 @@ public class HttpRequestProxy {
             throw new Exception(e.getMessage());
         } finally {
             getRequest.releaseConnection();
-            if (rd != null)
+            if (rd != null) {
                 try {
                     rd.close();
                 } catch (IOException e) {
                     throw new Exception(e.getMessage());
                 }
-            if (responseStream != null)
+            }
+            if (responseStream != null) {
                 try {
                     responseStream.close();
                 } catch (IOException e) {
                     throw new Exception(e.getMessage());
                 }
+            }
         }
         return str;
     }

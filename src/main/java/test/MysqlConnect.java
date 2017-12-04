@@ -23,8 +23,9 @@ public class MysqlConnect {
             Class.forName(driver);
             // 连接数据库
             Connection conn = DriverManager.getConnection(url, user, password);
-            if(!conn.isClosed())
+            if(!conn.isClosed()) {
                 System.out.println("Succeeded connecting to the Database!");
+            }
             for (String insertString: strings) {
                 // 要执行的SQL语句
                 String sql1 = "insert into userInfo values(" + insertString + ")";

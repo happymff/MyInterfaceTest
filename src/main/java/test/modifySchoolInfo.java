@@ -1,13 +1,12 @@
 package test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import util.HttpRequestProxy;
 import util.HttpRequestUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class modifySchoolInfo {
 	HttpRequestProxy hrp = new HttpRequestProxy();
@@ -27,9 +26,9 @@ public class modifySchoolInfo {
 		postData.put("sign",s);
 		String json=HttpRequestUtil.doPost(url, postData,"UTF-8");
 		System.out.println("返回结果："+json);
-		if(JsonResults.getJsonResult(json).equals("1")){
+		if("1".equals(JsonResults.getJsonResult(json))){
 			Assert.assertTrue(JsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
-		}else if(JsonResults.getJsonResult(json).equals("-1")){
+		}else if("-1".equals(JsonResults.getJsonResult(json))){
 			Assert.assertTrue(JsonResults.getJsonMsg(json).contains("操作成功"), "创建失败");
 		}else{
 			System.out.println("无任何结果");

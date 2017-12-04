@@ -50,10 +50,12 @@ public class SortMethods {
             int temp; // 记录临时中间值
             int i = start, j = end;
             do {
-                while ((numbers[i] < base) && (i < end))
+                while ((numbers[i] < base) && (i < end)) {
                     i++;
-                while ((numbers[j] > base) && (j > start))
+                }
+                while ((numbers[j] > base) && (j > start)) {
                     j--;
+                }
                 if (i <= j) {
                     temp = numbers[i];
                     numbers[i] = numbers[j];
@@ -62,10 +64,12 @@ public class SortMethods {
                     j--;
                 }
             } while (i <= j);
-            if (start < j)
+            if (start < j) {
                 quickSort(numbers, start, j);
-            if (end > i)
+            }
+            if (end > i) {
                 quickSort(numbers, i, end);
+            }
         }
     }
 
@@ -83,7 +87,9 @@ public class SortMethods {
         for (int i = 0; i < size; i++) {
             int k = i;
             for (int j = size - 1; j >i; j--)  {
-                if (numbers[j] < numbers[k])  k = j;
+                if (numbers[j] < numbers[k]) {
+                    k = j;
+                }
             }
             temp = numbers[i];
             numbers[i] = numbers[k];
@@ -108,8 +114,9 @@ public class SortMethods {
         int size = numbers.length, temp, j;
         for(int i=1; i<size; i++) {
             temp = numbers[i];
-            for(j = i; j > 0 && temp < numbers[j-1]; j--)
-                numbers[j] = numbers[j-1];
+            for(j = i; j > 0 && temp < numbers[j-1]; j--) {
+                numbers[j] = numbers[j - 1];
+            }
             numbers[j] = temp;
         }
     }
@@ -137,8 +144,9 @@ public class SortMethods {
                 merge(numbers, i, i + (s - 1), i + (t - 1));
                 i += t;
             }
-            if (i + (s - 1) < right)
+            if (i + (s - 1) < right) {
                 merge(numbers, i, i + (s - 1), right);
+            }
         }
     }
     /**
@@ -164,12 +172,14 @@ public class SortMethods {
             }
             k++;
         }
-        if (s == q + 1)
+        if (s == q + 1) {
             B[k++] = data[t++];
-        else
+        } else {
             B[k++] = data[s++];
-        for (int i = p; i <= r; i++)
+        }
+        for (int i = p; i <= r; i++) {
             data[i] = B[i];
+        }
     }
 
 

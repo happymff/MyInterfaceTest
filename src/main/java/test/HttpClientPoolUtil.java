@@ -25,11 +25,6 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
 /**
  * To change this template use File | Settings | File Templates.
  */
@@ -72,6 +67,7 @@ public class HttpClientPoolUtil {
      * Http connection keepAlive 设置
      */
     public static ConnectionKeepAliveStrategy defaultStrategy = new ConnectionKeepAliveStrategy() {
+        @Override
         public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
             HeaderElementIterator it = new BasicHeaderElementIterator(response.headerIterator(HTTP.CONN_KEEP_ALIVE));
             int keepTime = Http_Default_Keep_Time;
@@ -79,7 +75,7 @@ public class HttpClientPoolUtil {
                 HeaderElement he = it.nextElement();
                 String param = he.getName();
                 String value = he.getValue();
-                if (value != null && param.equalsIgnoreCase("timeout")) {
+                if (value != null && "timeout".equalsIgnoreCase(param)) {
                     try {
                         return Long.parseLong(value) * 1000;
                     } catch (Exception e) {

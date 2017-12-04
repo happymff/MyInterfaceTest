@@ -111,11 +111,11 @@ public class JsonResults {
 //        System.out.println("netClassUrl:" + row.get("netClassUrl"));
 //        System.out.println("userName:" + row.get("userName"));
 
-        if (param.equals("schoolId")) {
+        if ("schoolId".equals(param)) {
             return row.get("schoolId").toString();
-        } else if (param.equals("jid")) {
+        } else if ("jid".equals(param)) {
             return row.get("jid").toString();
-        } else if (param.equals("userName")) {
+        } else if ("userName".equals(param)) {
             return row.get("userName").toString();
         } else {
             System.out.println(param + "----param参数错误！----");

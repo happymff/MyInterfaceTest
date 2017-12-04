@@ -28,13 +28,13 @@ public class DataReader {
                 for (int j = 0; j < title.getLastCellNum(); j++) {
                     cf = title.getCell(j);
                     System.out.println("title的名称：" + cf);
-                    if (cf.toString().equals("ID")) {
+                    if ("ID".equals(cf.toString())) {
                         XSSFCell r = sheetAt.getRow(rowNum).getCell(j);
                         System.out.println("ID：" + r);
-                    }else if (cf.toString().equals("userName")){
+                    }else if ("userName".equals(cf.toString())){
                         XSSFCell r = sheetAt.getRow(rowNum).getCell(j);
                         System.out.println("userName：" + r);
-                    }else if (cf.toString().equals("pwd")){
+                    }else if ("pwd".equals(cf.toString())){
                         XSSFCell r = sheetAt.getRow(rowNum).getCell(j);
                         System.out.println("pwd：" + r);
                     }

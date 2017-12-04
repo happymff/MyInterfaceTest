@@ -32,7 +32,7 @@ public class SAXHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
 
-        if (qName.equals("book")) {
+        if ("book".equals(qName)) {
             bookIndex++;
             book = new Book();
             System.out.println("============================第" + bookIndex + "本书开始了=========================");
@@ -40,16 +40,16 @@ public class SAXHandler extends DefaultHandler {
             //System.out.println(attributes.getValue("id"));
             for (int i = 0; i < attributes.getLength(); i++) {
                 String name = attributes.getQName(i);
-                if (name.equals("id")) {
+                if ("id".equals(name)) {
                     book.setId(attributes.getValue(i));
-                } else if (name.equals("class")) {
+                } else if ("class".equals(name)) {
                     book.setClassName(attributes.getValue(i));
                 }
                 book.setId(attributes.getValue(i));
                 //System.out.println(name);
                 System.out.println("第" + bookIndex + "本书的" + attributes.getQName(i) + "是:" + attributes.getValue(i)/*attributes.getValue(Qname)*/);
             }
-        } else if (!qName.equals("bookStore")) {
+        } else if (!"bookStore".equals(qName)) {
             System.out.print("第" + bookIndex + "本书的" + qName + "是:");
         }
 
@@ -60,7 +60,7 @@ public class SAXHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         value = new String(ch, start, length);
         //如果标签下没有内容，如bookstore与book之间就没有内容，将不打印
-        if (!value.trim().equals("")) {
+        if (!"".equals(value.trim())) {
             System.out.println(value);
 
         }
@@ -70,15 +70,15 @@ public class SAXHandler extends DefaultHandler {
     //遍历元素的结束标签
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        if (qName.equals("book")) {
+        if ("book".equals(qName)) {
             bookList.add(book);
             book = null;
             System.out.println("============================第" + bookIndex + "本书结束了=========================");
-        } else if (qName.equals("name")) {
+        } else if ("name".equals(qName)) {
             book.setName(value);
-        } else if (qName.equals("author")) {
+        } else if ("author".equals(qName)) {
             book.setAuthor(value);
-        } else if (qName.equals("year")) {
+        } else if ("year".equals(qName)) {
             book.setYear(value);
         }
 

@@ -1,16 +1,15 @@
 package test;
 
-import org.testng.annotations.Test;
 import util.HttpRequestUtil;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import static data.DataRead_Write.readFromExcelDemo1;
 import static data.DataRead_Write.writeToExcelByParam;
+import static java.util.concurrent.Executors.newFixedThreadPool;
 
 
 public class MytestMutliThread  implements Runnable{
@@ -71,8 +70,9 @@ public class MytestMutliThread  implements Runnable{
         }
     }
     public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++)
+        ExecutorService service = newFixedThreadPool(10);
+        for (int i = 0; i < 10; i++) {
             service.execute(new MytestMutliThread());//并发50个用户
+        }
          }
 }

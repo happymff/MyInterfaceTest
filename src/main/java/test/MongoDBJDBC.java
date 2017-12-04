@@ -11,7 +11,7 @@ import com.mongodb.util.JSON;
  */
 
 public class MongoDBJDBC{
-    public static void main( String args[] ) {
+    public static void main(String[] args ) {
         try {
             // 连接到 mongodb 服务
             MongoClient mongoClient = new MongoClient("localhost", 27017);

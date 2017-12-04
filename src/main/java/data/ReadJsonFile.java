@@ -43,8 +43,8 @@ public class ReadJsonFile {
         System.out.println(s);
         String[] s1 = s.split("\n");
         JsonExtracter jsonExtracter = new JsonExtracter();
-        jsonExtracter.getJsonSomeString(s1[0],"name");
+        JsonExtracter.getJsonSomeString(s1[0],"name");
         System.out.println();
-        jsonExtracter.getJSONArraySomeString(s1[1],"students","age");
+        JsonExtracter.getJSONArraySomeString(s1[1],"students","age");
     }
 }

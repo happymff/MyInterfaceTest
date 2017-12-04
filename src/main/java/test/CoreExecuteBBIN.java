@@ -24,6 +24,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.util.regex.Pattern.*;
 import static org.slf4j.LoggerFactory.getLogger;
 import static org.springframework.web.servlet.view.AbstractView.DEFAULT_CONTENT_TYPE;
 
@@ -59,7 +60,7 @@ public class CoreExecuteBBIN {
                 }
             }
             url = url.replaceAll("&[^\\&]*=\\$\\{.*?\\}", "");
-            Pattern pattern = Pattern.compile("\\?.*?\\$\\{.*?\\}");
+            Pattern pattern = compile("\\?.*?\\$\\{.*?\\}");
             Matcher matcher = pattern.matcher(url);
             if (matcher.find()) {
                 String matchUrl = matcher.group(0);
@@ -146,7 +147,7 @@ public class CoreExecuteBBIN {
             }
         }
         url = url.replaceAll("&[^\\&]*=\\$\\{.*?\\}", "");
-        Pattern pattern = Pattern.compile("\\?.*?\\$\\{.*?\\}");
+        Pattern pattern = compile("\\?.*?\\$\\{.*?\\}");
         Matcher matcher = pattern.matcher(url);
         if (matcher.find()) {
             String matchUrl = matcher.group(0);

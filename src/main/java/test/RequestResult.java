@@ -8,7 +8,7 @@ public class RequestResult {
 	 * 获得请求结果
 	 */
 	public static void getResult(String str) {
-		if(JsonResults.getJsonResult(str).equals("1")){
+		if("1".equals(JsonResults.getJsonResult(str))){
 //			pass(str);
 			Assert.assertTrue(JsonResults.getJsonResult(str).contains("1"));
 //		}

@@ -41,6 +41,7 @@ public class TestHTMLParser {
         Parser parser = Parser.createParser(new String(inputHtml.getBytes(),"GBK"), "GBK");
         // 遍历所有的节点
         NodeList nodes = parser.extractAllNodesThatMatch(new NodeFilter() {
+            @Override
             public boolean accept(Node node) {
                 return true;
             }
