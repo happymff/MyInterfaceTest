@@ -44,7 +44,7 @@ public class HttpRequestUtil {
      * @return HTTP响应的字符串 
      */  
     @SuppressWarnings("unchecked")  
-    public static String doGet(String reqUrl, Map parameters,String recvEncoding) {  
+    public static String doGet(String reqUrl, Map parameters,String recvEncoding) {
         HttpURLConnection url_con = null;  
         String responseContent = null;  
         try {  
@@ -55,7 +55,7 @@ public class HttpRequestUtil {
                 params.append(element.getKey().toString());  
                 params.append("=");  
                 params.append(URLEncoder.encode(element.getValue().toString(),  
-                        HttpRequestUtil.requestEncoding));  
+                        HttpRequestUtil.requestEncoding));
                 params.append("&");  
             }  
   
@@ -197,8 +197,8 @@ public class HttpRequestUtil {
             }  
         }  
         return responseContent;  
-    }  
-  
+    }
+
     /** 
      * @return 连接超时(毫秒) 
      */  
